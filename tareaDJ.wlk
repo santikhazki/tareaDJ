@@ -1,3 +1,20 @@
+object berghain{
+	//var patova = #{rochensen,rodrigsen,gushtavotruccensen}
+	var listaDePersonas = #{}
+	
+	method agregarPersona(unaPersona){
+		listaDePersonas.add(unaPersona)
+		}
+		
+	//method quiereEntrar(unaPersona){
+		//if(patova.dejaPasar(unaPersona)){
+			//self.agregarPersona(unaPersona) 
+		
+		//}
+	//}
+}	
+	
+
 object vonLukaz {
 	
 	var energia = 150
@@ -69,11 +86,16 @@ object gonzen {
 
 object rochensen{
 	method dejaPasar(unaPersona){
-		return self.esMayor(unaPersona)
+	 return self.esMayor(unaPersona)
 	}
 	
 	method esMayor(unaPersona){
 		return unaPersona.edad() > 21
+	}
+	method permitirEntrarAlBoliche(unaPersona){
+		if(self.dejaPasar(unaPersona)){
+			berghain.agregarPersona(unaPersona) 
+		}
 	} 
 }
 
@@ -85,10 +107,29 @@ object rodrigsen{
 	method tieneRemeraNegra(unaPersona){
 		return unaPersona.colorDeRemera() == "Negra"
 	}
+	
+	method permitirEntrarAlBoliche(unaPersona){
+		if(self.dejaPasar(unaPersona)){
+			berghain.agregarPersona(unaPersona) 
+		
+		}
+	}
 }
 
 object gushtavotruccensen{
 	method dejaPasar(unaPersona){
-		return false
+		return "hoy no es tu noche"
+	}
+	
+	method permitirEntrarAlBoliche(unaPersona){
+		if(self.dejaPasar(unaPersona)){
+			berghain.agregarPersona(unaPersona) 
+		
+		}
 	}
 }
+
+
+
+
+
