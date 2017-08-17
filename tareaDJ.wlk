@@ -1,10 +1,13 @@
 object berghain{
-	//var patova = #{rochensen,rodrigsen,gushtavotruccensen}
 	var listaDePersonas = #{}
 	
 	method agregarPersona(unaPersona){
 		listaDePersonas.add(unaPersona)
-		}
+	}
+		
+	method cantidadDePersonasBailando(unaPista){
+		return unaPista.cuantosBailanAqui()
+	}
 }	
 	
 
@@ -159,8 +162,51 @@ object mainRoom{
 		unaPersona.modificarDiversion(30)
 	}
 	
-	method hacerBailarUnaLista(){
-		personasBailando.map({persona => persona.hacerBailar(persona)})
+	method hacerBailarATodasLasPersonas(){
+		personasBailando.map({persona => self.hacerBailar(persona)})
+	}
+	
+	method cuantosBailanAqui(){
+		return personasBailando.size()
+	}
+}
+
+object darkRoom {
+	var personasBailando = #{}
+	
+	method agregarPersona (unaPersona){
+	personasBailando.add(unaPersona)
+	}
+	
+	method cuantosBailanAqui(){
+		return personasBailando.size()
+	}
+}
+
+object panoramaBar {
+	var personasBailando = #{bianker,gonzen,vonLukaz}
+	
+	method agregarPersona(unaPersona){
+		personasBailando.add(unaPersona)
+	}
+	
+	method dixon(unaPersona){
+		unaPersona.modificarEnergia(-60)
+		unaPersona.modificarDiversion(30)
+	  }
+	
+	method marcelDettman(unaPersona){
+		unaPersona.modificarEnergia(-(unaPersona.energia()))
+		unaPersona.modificarDiversion(1000)
+	}
+	
+	method tommyMunioz(unaPersona){
+		unaPersona.modificarEnergia(-80)
+		unaPersona.modificarDiversion(-(unaPersona.diversion()))
+	}
+	
+	method cuantosBailanAqui(){
+		return personasBailando.size()
 	}
 }
 
