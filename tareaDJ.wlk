@@ -8,6 +8,11 @@ object berghain{
 	method cantidadDePersonasBailando(unaPista){
 		return unaPista.cuantosBailanAqui()
 	}
+	
+	method dondeEstaBailandoGonzen(){
+		
+	}
+	 
 }	
 	
 
@@ -169,6 +174,10 @@ object mainRoom{
 	method cuantosBailanAqui(){
 		return personasBailando.size()
 	}
+	
+	method estaGonzenAqui(){
+		return personasBailando.contains(gonzen)
+	}
 }
 
 object darkRoom {
@@ -180,6 +189,10 @@ object darkRoom {
 	
 	method cuantosBailanAqui(){
 		return personasBailando.size()
+	}
+	
+	method estaGonzenAqui(){
+		return personasBailando.contains(gonzen)
 	}
 }
 
@@ -195,7 +208,7 @@ object panoramaBar {
 		unaPersona.modificarDiversion(30)
 	  }
 	
-	method marcelDettman(unaPersona){
+	method marcelDettmann(unaPersona){
 		unaPersona.modificarEnergia(-(unaPersona.energia()))
 		unaPersona.modificarDiversion(1000)
 	}
@@ -208,6 +221,12 @@ object panoramaBar {
 	method cuantosBailanAqui(){
 		return personasBailando.size()
 	}
+	
+	method estaGonzenAqui(){
+		return personasBailando.contains(gonzen)
+	}
+	
+	// FALTA AGREGAR A LA LISTA DE personasBailando A CADA UNO QUE CADA DJ  HACE BAILAR
 }
 
 
