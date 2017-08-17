@@ -5,13 +5,6 @@ object berghain{
 	method agregarPersona(unaPersona){
 		listaDePersonas.add(unaPersona)
 		}
-		
-	//method quiereEntrar(unaPersona){
-		//if(patova.dejaPasar(unaPersona)){
-			//self.agregarPersona(unaPersona) 
-		
-		//}
-	//}
 }	
 	
 
@@ -36,6 +29,15 @@ object vonLukaz {
 	method edad(){
 		return edad
 	}
+	
+	method modificarEnergia(unValor){
+		energia += unValor
+	}
+	
+	method modificarDiversion(unValor){
+		diversion += unValor
+	}
+	
 }
 	
 object bianker {
@@ -59,6 +61,14 @@ object bianker {
 	method edad(){
 		return edad
 	}
+	
+	method modificarEnergia(unValor){
+		energia += unValor
+	}
+	
+	method modificarDiversion(unValor){
+		diversion += unValor
+	}
 }
 	
 object gonzen {
@@ -81,6 +91,14 @@ object gonzen {
 	
 	method edad(){
 		return edad
+	}
+	
+	method modificarEnergia(unValor){
+		energia += unValor
+	}
+	
+	method modificarDiversion(unValor){
+		diversion += unValor
 	}
 }
 
@@ -128,6 +146,24 @@ object gushtavotruccensen{
 		}
 	}
 }
+
+object mainRoom{
+	var personasBailando = #{bianker,vonLukaz}
+	
+	method agregarPersona(unaPersona){
+		personasBailando.add(unaPersona)
+	}
+	
+	method hacerBailar(unaPersona){
+		unaPersona.modificarEnergia(-40)
+		unaPersona.modificarDiversion(30)
+	}
+	
+	method hacerBailarUnaLista(){
+		personasBailando.map({persona => persona.hacerBailar(persona)})
+	}
+}
+
 
 
 
