@@ -1,5 +1,6 @@
 object berghain{
 	var listaDePersonas = #{}
+	var listaDePistas = #{mainRoom,darkRoom,panoramaBar}
 	
 	method agregarPersona(unaPersona){
 		listaDePersonas.add(unaPersona)
@@ -10,7 +11,11 @@ object berghain{
 	}
 	
 	method dondeEstaBailandoGonzen(){
-		
+		return listaDePistas.filter({ unaPista => unaPista.estaGonzenAqui() })
+	}
+	
+	method queBailenTodosLosQueEstanEn(unaPista){
+		unaPista.hacerBailarATodasLasPersonas()
 	}
 	 
 }	
@@ -203,7 +208,7 @@ object panoramaBar {
 		personasBailando.add(unaPersona)
 	}
 	
-	method dixon(unaPersona){
+	method dixon(unaPersona){                         //CONSULTAR POR LA REP. DE LOGICA, CADA DJ ES IGUAL A hacerBailar()
 		unaPersona.modificarEnergia(-60)
 		unaPersona.modificarDiversion(30)
 	  }
@@ -226,7 +231,6 @@ object panoramaBar {
 		return personasBailando.contains(gonzen)
 	}
 	
-	// FALTA AGREGAR A LA LISTA DE personasBailando A CADA UNO QUE CADA DJ  HACE BAILAR
 }
 
 
