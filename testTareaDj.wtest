@@ -20,4 +20,14 @@ describe "test de patovas y de las pistas" {
 		
 		assert.equals(berghain.dondeEstaBailandoGonzen(),#{panoramaBar})
 		}
+	
+	test "veo si rodrigsen deja pasar a vonLukas" {
+
+		assert.that(not(rodrigsen.dejaPasar(vonLukaz)))
+		}
+		
+	test "veo si rodrigsen deja pasar a bianker" {
+
+		assert.that(rodrigsen.dejaPasar(bianker))
+		}
 }
