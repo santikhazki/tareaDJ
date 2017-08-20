@@ -1,0 +1,23 @@
+import tareaDJ.*
+describe "test de patovas y de las pistas" {
+
+	test "me fijo si rochensen deja pasar a bianker" {
+
+		assert.that(rochensen.dejaPasar(bianker))
+		}
+		
+	test "veo si rochensen deja pasar a vonLukas" {
+
+		assert.that(not(rochensen.dejaPasar(vonLukaz)))
+		}
+		
+	test "en panoramaBar tiene que haber 3 personas bailando" {
+		
+		assert.equals(panoramaBar.cuantosBailanAqui(), 3)
+		}
+		
+	test "Gonzen esta bailando en panoramaBar" {
+		
+		assert.equals(berghain.dondeEstaBailandoGonzen(),#{panoramaBar})
+		}
+}
